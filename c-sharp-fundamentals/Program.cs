@@ -2,7 +2,7 @@
 // Console.WriteLine("Hello, World!");
 
 // Programa que calcula el área de un rectangulo
-double ladoA;
+var ladoA = 0.0; // la palabra reservada var se usa para declarar variables locales de tipo implícito por lo que es necesario asignar un valor a la variable
 double ladoB;
 double area;
 
