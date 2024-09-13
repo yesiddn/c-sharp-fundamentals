@@ -7,10 +7,15 @@ int totalJugador = 0;
 int totalDealer = 0;
 int num = 0;
 string message = "";
+string anotherCard = "";
 string switchControl = "menu";
+System.Random random = new System.Random();
 
 while (true)
 {
+  totalDealer = 0;
+  totalJugador = 0;
+
   switch (switchControl)
   {
     case "menu":
@@ -22,7 +27,6 @@ while (true)
     case "21":
       do
       {
-        System.Random random = new System.Random();
         num = random.Next(1, 12);
         totalJugador += num;
         Console.WriteLine("Toma tu carta");
@@ -30,8 +34,15 @@ while (true)
         Console.WriteLine($"Total: {totalJugador}");
 
         Console.WriteLine("¿Deseas otra carta? (si/no)");
+
+        anotherCard = Console.ReadLine().ToLower();
       }
-      while (Console.ReadLine().ToLower() == "si");
+      while (anotherCard == "si");
+
+      totalDealer = random.Next(12, 23);
+
+      Console.WriteLine($"Total dealer: {totalDealer}");
+      Console.WriteLine($"Tu total: {totalJugador}");
 
       if (totalJugador > 15 && totalJugador < 22)
       {
